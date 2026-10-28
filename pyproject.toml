@@ -1,0 +1,22 @@
+[project]
+name = "bob"
+version = "0.1.0"
+description = "Brain On Board: per-project memory for coding agents, served over MCP."
+requires-python = ">=3.10"
+dependencies = ["mcp>=2,<3", "pyyaml>=6"]
+
+[project.scripts]
+bob = "bob.cli:main"
+
+[tool.poetry]
+packages = [{ include = "bob", from = "src" }]
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[build-system]
+requires = ["poetry-core>=2.0"]
+build-backend = "poetry.core.masonry.api"
